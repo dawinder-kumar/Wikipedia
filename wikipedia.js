@@ -9,7 +9,7 @@ let errorMessage = document.createElement('p');
 myForm.addEventListener('submit', function (e) {
     e.preventDefault();
     finalData.innerHTML = '';
-    inputValue = searchBar.value;
+    inputValue = searchBar.value.trim();
     if (inputValue == '') {
         errorMessage.style.color = 'red';
         errorMessage.textContent = "**Enter Something, Input Value Can't Be Empty";
