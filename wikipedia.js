@@ -4,11 +4,12 @@ let searchBar = document.getElementById('search-bar');
 let resultSection = document.getElementById('reslut-section');
 let finalData = document.getElementById('final-data');
 let clearButton = document.getElementById('cross-svg');
+let inputValue = searchBar.value.trim();
 let errorMessage = document.createElement('p');
 myForm.addEventListener('submit', function (e) {
     e.preventDefault();
     finalData.innerHTML = '';
-    let inputValue = searchBar.value.trim();
+    inputValue = searchBar.value.trim();
     if (inputValue == '') {
         errorMessage.style.color = 'red';
         errorMessage.textContent = "**Enter Something, Input Value Can't Be Empty";
