@@ -1,3 +1,4 @@
+"use strict";
 let myForm = document.getElementById('my-form');
 let searchBar = document.getElementById('search-bar');
 let resultSection = document.getElementById('reslut-section');
@@ -13,7 +14,7 @@ myForm.addEventListener('submit', function (e) {
         errorMessage.style.color = 'red';
         errorMessage.textContent = "**Enter Something, Input Value Can't Be Empty";
         myForm.append(errorMessage);
-        errorMessage.style.visibility='visible';
+        errorMessage.style.visibility = 'visible';
     }
     else {
         errorMessage.style.visibility = 'hidden';
@@ -21,11 +22,11 @@ myForm.addEventListener('submit', function (e) {
     }
 });
 // fetching the data from the URL
-let renderData =  () => {
+let renderData = () => {
     let url = ` https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${inputValue}`;
     fetch(url)
         .then((response) => {
-            if(response.ok){
+            if (response.ok) {
                 return response.json();
             }
             else {
@@ -58,12 +59,12 @@ let displayData = (data) => {
         heading.setAttribute('id', 'heading')
         heading.innerText = element['title'];
         heading.setAttribute('href', urlLink)
-        heading.setAttribute('target','_blank')
+        heading.setAttribute('target', '_blank')
         finalData.append(heading);
 
         link.setAttribute('href', urlLink);
-        link.setAttribute('id','link')
-        link.setAttribute('target','_blank')
+        link.setAttribute('id', 'link')
+        link.setAttribute('target', '_blank')
         link.innerText = urlLink;
         finalData.append(link);
 
